@@ -8,5 +8,10 @@
   </div>
 </template>
 <script>
-export default {};
+import {check} from '@/composable/checkNameCart.js' 
+export default {
+  setup(){
+    check("Balo gấu")
+  }
+};
 </script>

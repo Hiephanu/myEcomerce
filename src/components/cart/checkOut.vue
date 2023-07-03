@@ -56,16 +56,16 @@
         <div class="grid grid-cols-2">
           <div class="font-bold">
             <div class="mt-12">
-              <h2>{{ checkoutProduct.choseProduct.name }}</h2>
+              <h2>{{ checkoutProduct.docData.choseProduct.name }}</h2>
               <p class="mt-4">
-                Đơn giá: {{ checkoutProduct.choseProduct.price }}đ
+                Đơn giá: {{ checkoutProduct.docData.choseProduct.price }}đ
               </p>
-              <p class="mt-4">Số lượng: {{ checkoutProduct.choseNumber }}</p>
+              <p class="mt-4">Số lượng: {{ checkoutProduct.docData.choseNumber }}</p>
             </div>
             <p class="mt-4">Thành tiền: {{ total }}đ</p>
           </div>
           <div>
-            <img :src="checkoutProduct.choseProduct.img" alt="" class="mt-12" />
+            <img :src="checkoutProduct.docData.choseProduct.img" alt="" class="mt-12" />
           </div>
         </div>
       </div>
@@ -81,8 +81,8 @@
 import store from "@/store";
 import { computed, ref } from "vue";
 import { projectAuth } from "@/config/firebase";
-import { db } from "@/config/firebase";
-import { collection } from "firebase/firestore";
+import { deleteProduct } from "@/services/deleteProduct";
+import router from "@/router/router";
 export default {
   setup() {
     const user = projectAuth.currentUser;
@@ -90,12 +90,14 @@ export default {
       return store.state.checkoutProduct;
     });
     const total = ref(
-      checkoutProduct.value.choseProduct.price *
-        checkoutProduct.value.choseNumber
+      checkoutProduct.value.docData.choseProduct.price *
+        checkoutProduct.value.docData.choseNumber
     );
-    const colRef=collection(db,'cart','product',user.displayName)
+    
     const buy=async()=>{
-      await store.dispatch("deleteProduct",colRef,'name',checkoutProduct.value.choseProduct.name)
+      deleteProduct(checkoutProduct.value.docId)
+      alert("Sản phẩm đã được thanh toán")
+      router.push("/")
     }
     return {
       checkoutProduct,

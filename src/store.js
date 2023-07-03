@@ -1,13 +1,11 @@
 import { createStore } from "vuex";
 import { db } from "@/config/firebase.js";
+import { check } from "./composable/checkNameCart";
 import {
   collection,
   getDocs,
   addDoc,
   onSnapshot,
-  query,
-  where,
-  deleteDoc,
 } from "firebase/firestore";
 import { projectAuth } from "@/config/firebase.js";
 import { ref } from "vue";
@@ -315,8 +313,14 @@ const store = createStore({
       try {
         const username = projectAuth.currentUser.displayName;
         const docRef = collection(db, "cart", "product", username);
-        await addDoc(docRef, data);
-        alert("Đã thêm sản phẩm vào giỏ hàng");
+        if(check(data.choseProduct.name)){
+           await addDoc(docRef, data);
+           alert("Đã thêm sản phẩm vào giỏ hàng");
+        }
+        else {
+          alert("Sản phẩm đã tồn tại trong cửa hàng")
+          console.log(check(data.choseProduct.name),data);
+        }
       } catch (error) {
         alert(" Có lỗi đã xảy ra : ", error);
         console.log(error);
@@ -335,7 +339,7 @@ const store = createStore({
         onSnapshot(cartRef, (snapshot) => {
           products.value.length = 0;
           snapshot.forEach((doc) => {
-            const product = doc.data();
+            const product = {docData: doc.data(),docId :doc.id};
             products.value.push(product);
           });
         });
@@ -348,15 +352,8 @@ const store = createStore({
     checkoutProduct({ commit }, data) {
       commit("checkoutProduct", data);
     },
-    async deleteProduct(collectionName, fieldName, fieldValue) {
-      const q = query(collectionName, where(fieldName, "==", fieldValue));
+    
+  }
+})
+export default store
 
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        deleteDoc(doc.ref);
-      });
-    },
-  },
-});
-
-export default store;

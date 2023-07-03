@@ -38,13 +38,13 @@
             :key="index"
             class="grid mt-2 border-t-[1px] pt-2 border-gray-200 grid-cols-2"
           >
-            <img :src="product.choseProduct.img" alt="" class="w-4/5 h-4/5" />
+            <img :src="product.docData.choseProduct.img" alt="" class="w-4/5 h-4/5" />
             <div>
               <p class="text-primary text-xl font-semibold">
-                {{ product.choseProduct.name }}
+                {{ product.docData.choseProduct.name }}
               </p>
               <p class="text-xs font-semibold">
-                Đơn giá : {{ product.choseProduct.price }}
+                Đơn giá : {{ product.docData.choseProduct.price }}
               </p>
             </div>
           </div>

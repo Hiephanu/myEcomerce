@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-12 bg-primary text-white font-semibold">
+    <div class="mt-12 bg-primary text-white font-semibold sm:mt-[50vh]">
        <div class="grid grid-cols-4 pt-12 pb-12 gap-4 sm:block">
             <div>
                 <RouterLink to="/">Chính sách bán hàng</RouterLink><br/>

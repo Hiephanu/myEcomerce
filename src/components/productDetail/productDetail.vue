@@ -1,12 +1,12 @@
 <template>
-    <h1 class="text-3xl text-primary font-semibold mt-16 mb-16">Nội dung chi tiết sản phẩm</h1>
-    <div class="flex justify-around w-full h-[100vh]">
-        <div class="w-[60%] h-full">
-            <div class="h-full">
-                <img :src="product.img" alt="" class="w-[90%] h-full m-auto">
+    <h1 class="text-3xl text-primary font-semibold mt-16 mb-16 sm:text-center">Nội dung chi tiết sản phẩm</h1>
+    <div class="flex justify-around w-full h-[100vh] sm:block">
+        <div class="w-[60%] h-full sm:h-2/5 sm:w-full">
+            <div class="h-full sm:m-auto">
+                <img :src="product.img" alt="" class="w-[90%] h-full m-auto sm:w-4/5 sm:h-full">
             </div>
         </div>
-        <div class="w-[40%]">
+        <div class="w-[40%] sm:w-full">
             <h1 class="font-bold text-4xl mt-12">{{ product.name }}</h1>
             <h2 class="text-xl mt-8">{{ product.description }}</h2>
             <h1 class="font-bold text-4xl mt-12">{{ product.price }}đ</h1>
@@ -27,10 +27,10 @@
                 </div>
             </div>
             <div class="flex mt-12">
-                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded" @click="addCart">
+                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded sm:text-xs" @click="addCart">
                     Thêm vào giỏ hàng
                 </button>
-                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded ml-16" @click="buyNow">
+                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded ml-16 sm:text-xs" @click="buyNow">
                     Mua ngay
                 </button>
             </div>
