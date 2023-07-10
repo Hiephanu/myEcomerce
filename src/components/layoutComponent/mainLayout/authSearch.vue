@@ -1,14 +1,14 @@
 <template>
-  <div class="flex justify-around mt-8 sm:block">
-    <div class="w-32 h-32 sm:w-16 sm:h-16 sm:m-auto">
+  <div class="flex justify-around mt-8 sm:block ">
+    <div class="h-16 w-24  sm:w-16 sm:h-16 sm:m-auto">
       <RouterLink to="/">
         <img
-          src="https://pos.nvncdn.net/cba2a3-7534/store/20230331_SR9LJplI.png"
+          src="../../../assets/imgs/logo.png"
           alt=""
       /></RouterLink>
     </div>
-    <searchBar />
-    <div class="flex justify-between text-secondary text-xl font-semibold mt-2">
+    <searchBar class="mt-4"/>
+    <div class="flex justify-between text-secondary text-xl font-semibold mt-2 mt-4">
       <div class="flex" v-if="!user">
         <RouterLink to="/Dang-ky" class="hover:text-primary mr-2"
           >Đăng ký</RouterLink

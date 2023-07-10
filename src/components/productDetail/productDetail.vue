@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="w-[40%] sm:w-full">
-            <h1 class="font-bold text-4xl mt-12">{{ product.name }}</h1>
+            <h1 class="font-bold text-4xl mt-4">{{ product.name }}</h1>
             <h2 class="text-xl mt-8">{{ product.description }}</h2>
             <h1 class="font-bold text-4xl mt-12">{{ product.price }}đ</h1>
             <div class="mt-12 flex">

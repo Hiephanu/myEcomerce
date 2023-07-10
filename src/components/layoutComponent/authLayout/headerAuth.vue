@@ -3,13 +3,13 @@
     <div class="flex mt-4 ml-8">
       <RouterLink to="/"
         ><img
-          src="https://img.cdn.vncdn.io/cdn-pos/cba2a3-7534/store/20230331_SR9LJplI.png"
+          src="../../../assets/imgs/logo.png"
           alt=""
-          class="w-28 h-16"
+          class="w-28 h-24"
       /></RouterLink>
-      <h1 class="ml-8 mt-4 text-secondary text-3xl font-bold">Moji</h1>
+      <h1 class="ml-8 mt-6 text-secondary text-3xl font-bold">Creative Store</h1>
     </div>
-    <div class="mt-8 mr-8">Bạn cần trợ giúp ?</div>
+    <div class="mt-10 mr-8">Bạn cần trợ giúp ?</div>
   </div>
   <div class="flex justify-center">
     <div

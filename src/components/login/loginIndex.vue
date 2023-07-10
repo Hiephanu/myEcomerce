@@ -18,7 +18,7 @@
         />
       </div>
       <button
-        class="text-center w-4/5 ml-[10%] h-12 bg-primary text-white mt-8 rounded cursor-pointer"
+        class="text-center w-4/5 ml-[10%] h-12 bg-primary text-white mt-8 rounded cursor-pointer hover:bg-secondary"
         :class="{ pending: 'bg-gray' }"
         @click="login"
       >
@@ -31,11 +31,13 @@
       <p class="text-center text-xl mt-4">Hoặc đăng nhập với</p>
       <p
         class="text-center mt-4 w-4/5 bg-blue-600 text-white pb-2 pt-2 ml-[10%] rounded cursor-pointer"
+        @click="loginWithFacebook"
       >
         Đăng nhập với Facebook
       </p>
       <p
         class="text-center mt-4 w-4/5 bg-red-500 text-white pb-2 pt-2 ml-[10%] rounded cursor-pointer"
+        @click="loginWithGoogle"
       >
         Đăng nhập với Google
       </p>
@@ -46,6 +48,8 @@
 import { ref } from "vue";
 import { useSignIn } from "@/composable/useSignIn.js";
 import router from "@/router/router";
+import signInWithGoogle from "@/composable/loginWithGoogle";
+import signInWithFacebook from "@/composable/loginWithFacebook"
 export default {
   setup() {
     const email = ref("");
@@ -60,12 +64,22 @@ export default {
         error.value = null;
       }, 4000);
     };
+    const loginWithGoogle=async ()=>{
+       await signInWithGoogle()
+      router.push("/")
+    }
+    const loginWithFacebook=async ()=>{
+      await signInWithFacebook()
+      router.push("/Dang-nhap")
+    }
     return {
       email,
       password,
       error,
       pending,
       login,
+      loginWithGoogle,
+      loginWithFacebook
     };
   },
 };

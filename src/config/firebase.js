@@ -3,6 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import {getFirestore} from 'firebase/firestore'
+import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDZ7DHMLiPhz6y9wQj-lvCgK0jDQNoYch8",
@@ -19,4 +20,6 @@ const projectAuth = firebase.auth()
 const fireStoreCore = firebase.firestore();
 const db = getFirestore(app);
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-export {fireStoreCore,projectAuth,timestamp,db}
+const auth=getAuth(app)
+const provider=new GoogleAuthProvider()
+export {fireStoreCore,projectAuth,timestamp,db,auth,provider}
