@@ -27,10 +27,10 @@
                 </div>
             </div>
             <div class="flex mt-12">
-                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded sm:text-xs" @click="addCart">
+                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded sm:text-xs sm:pt-2 sm:pb-2 sm:pl-6 sm:pr-6" @click="addCart">
                     Thêm vào giỏ hàng
                 </button>
-                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded ml-16 sm:text-xs" @click="buyNow">
+                <button class="pt-4 pb-4 pl-10 pr-10 bg-primary text-white rounded ml-16 sm:text-xs sm:pt-2 sm:pb-2 sm:pl-6 sm:pr-6" @click="buyNow">
                     Mua ngay
                 </button>
             </div>

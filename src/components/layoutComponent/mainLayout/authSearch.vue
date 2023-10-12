@@ -31,7 +31,7 @@
           {{ number }}
         </p>
         <div
-          class="absolute bg-white w-80 top-2 left-[-200px] p-2 h-96 overflow-y-auto hidden group-hover:block"
+          class="absolute bg-white w-80 top-2 left-[-270px] p-2 h-96 overflow-y-auto hidden group-hover:block"
         >
           <div
             v-for="(product, index) in cartData"
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="group-hover:block hidden absolute top-96 left-[-200px] w-80 h-18 bg-white pb-4">
+        <div class="group-hover:block hidden absolute top-96 left-[-270px] w-80 h-18 bg-white pb-4">
           <RouterLink to="/cart"> <button class="mt-4 pt-4 pb-4 pl-8 pr-8 text-white bg-primary ml-[23%]">Xem giỏ hàng</button></RouterLink>
         </div>
       </div>

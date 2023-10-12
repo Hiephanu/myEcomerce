@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between">
-    <div class="flex mt-4 ml-8">
+    <div class="flex ml-8">
       <RouterLink to="/"
         ><img
           src="../../../assets/imgs/logo.png"

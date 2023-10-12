@@ -219,79 +219,8 @@ const routes = [
       layout:"productLayout"
     }
   }
-];
-// const routes = [
-//   { path: "/", component: homePage, meta: { layout: "mainLayout" } },
-//   { path: "/Dang-nhap", component: loginPage, meta: { layout: "authLayout" } },
-//   { path: "/Dang-ky", component: registerPage, meta: { layout: "authLayout" } },
-//   {
-//     path: "/Gau-bong",
-//     component: bearProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "gau-bong-cute", component: bearCute },
-//       { path: "gau-bong-idol", component: bearIdol },
-//       { path: "gau-bong-khac", component: bearOther }
-//     ]
-//   },
-//   {
-//     path: "/Balo",
-//     component: baloProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "balo", component: baloType },
-//       { path: "tui-đeo-cheo", component: baloCrossBag },
-//       { path: "vi", component: baloWallet }
-//     ]
-//   },
-//   {
-//     path: "/Van-phong-pham",
-//     component: stationeryProducts,
-//     meta: { layout: "productLayout" }
-//   },
-//   {
-//     path: "/Trang-tri",
-//     component: decorationProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "banner", component: bannerDecor },
-//       { path: "đen-ngu", component: ledDecor },
-//       { path: "tuong", component: statueDecor },
-//       { path: "chuong-gio", component: windDecor },
-//       { path: "đo-trang-tri-khac", component: otherDecor }
-//     ]
-//   },
-//   {
-//     path: "/Phu-kien-thoi-trang",
-//     component: fashionProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "phu-kien", component: accessoriesFashion },
-//       { path: "quan-ao", component: clothesFashion }
-//     ]
-//   },
-//   {
-//     path: "/Phu-kien-dien-thoai",
-//     component: phoneProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "op-đien-thoai", component: casePhone },
-//       { path: "tai-nghe", component: earPhone },
-//       { path: "san-pham-khac", component: otherPhone },
-//       { path: "day-đeo-đien-thoai", component: strapPhone }
-//     ]
-//   },
-//   {
-//     path: "/Do-choi",
-//     component: toyProducts,
-//     meta: { layout: "productLayout" },
-//     children: [
-//       { path: "to-tranh-mau", component: paintingToy },
-//       { path: "mo-hinh-nha", component: modelToy },
-//       { path: "đo-choi-xep-hinh", component: puzzleToy }
-//     ]
-//   }
-// ];
+]
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
